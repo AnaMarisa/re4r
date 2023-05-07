@@ -1,0 +1,985 @@
+:root {
+  font-size: 15px;
+  --bg-color: #000;
+  --padding-pg: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+} */
+
+.time-slice {
+  display: -webkit-box;
+  -webkit-align-items: strech;
+}
+
+.date.time {
+  -webkit-flex-shrink: 0;
+  -webkit-flex-basis: 100px;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-decoration: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "EB Garamond", serif;
+  color: #fff;
+  height: 100%;
+  background-color: var(--bg-color);
+  transition: 0.2s linear;
+}
+
+@font-face {
+  font-family: "Resident Evil 4 Remake Font";
+  src: url("font/ResidentEvil4RemakeFont.eot");
+  src: url("font/ResidentEvil4RemakeFont.eot?#iefix") format("embedded-opentype"), url("font/ResidentEvil4RemakeFont.woff2") format("woff2"), url("font/ResidentEvil4RemakeFont.woff") format("woff"),
+    url("font/ResidentEvil4RemakeFont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Navbar */
+h1 {
+  font-size: 64px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  height: auto;
+  font-family: "Teko", sans-serif;
+  padding: 30px;
+  background-color: var(--bg-color);
+  justify-content: flex-end;
+  border-bottom: 1px solid #3d0303;
+  align-items: center;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+}
+
+.navbar a:hover {
+  color: #b6292b;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+ul {
+  font-weight: 400;
+  width: 29%;
+}
+
+li.navbar-nav {
+  list-style-type: none;
+  display: inline-block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.59px;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    background-color: var(--bg-color);
+    overflow: hidden;
+    justify-content: flex-start;
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .navbar #links {
+    display: none;
+  }
+
+  .navbar a {
+    color: white;
+    padding: 14px 16px;
+    font-size: 17px;
+    display: block;
+    width: max-content;
+    position: relative;
+  }
+
+  .navbar a.icon {
+    background: #000;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+    z-index: 1000;
+  }
+
+  .active {
+    background-color: #b6292b;
+    color: white;
+    z-index: 1000;
+  }
+}
+/* End of Navbar */
+
+/* Jumbotron */
+.jumbotron-wrapper {
+  background-image: linear-gradient(180deg, rgba(31, 30, 30, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%), url(img/3.jpeg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: white;
+  height: 700px;
+  position: relative;
+}
+
+.jumbotron {
+  margin-left: 40px;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.page-title {
+  font-family: "Resident Evil 4 Remake Font";
+  font-weight: normal;
+  font-size: 10rem;
+  letter-spacing: 3px;
+  font-style: normal;
+  width: 500px;
+}
+
+p.lead-1 {
+  font-size: 25px;
+  margin: 0 0 15px 0;
+}
+
+.button-1 {
+  background-color: #b6292b;
+  border: none;
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 4px 2px;
+  cursor: pointer;
+  letter-spacing: 1.75px;
+  transition-duration: 0.4s;
+}
+
+.button-1:hover {
+  background-color: var(--bg-color);
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .jumbotron-wrapper {
+    background-image: linear-gradient(180deg, rgba(31, 30, 30, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%), url(img/3.jpeg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: white;
+    height: 100vh;
+    position: relative;
+  }
+
+  .jumbotron {
+    margin-left: 48px;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding-left: 0rem;
+    padding-right: 6rem;
+  }
+
+  .page-title {
+    font-size: 5rem;
+  }
+
+  p.lead-1 {
+    font-size: 1.5rem;
+  }
+
+  .button-1 {
+    padding: 10px 27px;
+    font-size: 1rem;
+    margin: 4px 2px;
+  }
+}
+/* End of Jumbotron */
+
+/* Our Team */
+.ct-wrapper {
+  padding: 40px;
+}
+
+.ct-title,
+.title-block {
+  font-family: "Resident Evil 4 Remake Font";
+  text-align: center;
+  font-size: 5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .ct-wrapper {
+    padding: 40px;
+  }
+
+  .ct-title,
+  .title-block {
+    font-size: 4rem;
+    letter-spacing: 3px;
+  }
+
+  img {
+    margin-top: 20px;
+    width: 100% !important;
+    height: auto !important;
+    margin: auto;
+    display: block;
+  }
+
+  .desc-text {
+    width: 85% !important;
+    margin: auto;
+  }
+
+  h2.lead {
+    font-size: 1.2rem !important;
+    font-weight: 300;
+    text-align: justify;
+  }
+}
+
+/* Carousel */
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  display: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.mySlides {
+  display: none;
+}
+
+/* Img */
+img {
+  width: 60%;
+  height: 350px;
+  margin: auto;
+  display: block;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #b6292b;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 10px;
+  }
+}
+/* End of Carousel */
+
+/* Main Content */
+.first-container {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%), url(img/img2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+  padding: var(--padding-pg);
+}
+
+.desc-text {
+  width: 76%;
+  margin: auto;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-align: left;
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    height: calc(100vh - 70px);
+  }
+
+  .jumbotron-wrapper {
+    background-image: linear-gradient(180deg, rgba(31, 30, 30, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%), url(img/3.jpeg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 565px;
+  }
+
+  .page-title {
+    font-size: 4rem;
+  }
+
+  .button-1 {
+    background-color: #b6292b;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 500;
+    margin: 4px 2px;
+    cursor: pointer;
+    letter-spacing: 1.7px;
+    transition-duration: 0.4s;
+  }
+
+  p.lead-1 {
+    font-size: 12px;
+  }
+
+  .first-container {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%), url(img/img2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    justify-content: center;
+    width: auto;
+  }
+
+  .title-block,
+  .ct-title {
+    font-family: "Resident Evil 4 Remake Font";
+    text-align: center;
+    font-size: 3.125rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    display: block;
+  }
+
+  .desc-text {
+    width: auto;
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: left;
+  }
+
+  .card-text {
+    font-size: 1rem !important;
+    width: 90% !important;
+  }
+
+  h2.lead {
+    font-size: 1.1rem !important;
+  }
+
+  .container-1 {
+    width: 70% !important;
+  }
+
+  .step-content {
+    font-size: 1rem !important;
+    font-weight: 300;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  p.step-index {
+    margin-right: 16px !important;
+    font-size: 12px !important;
+  }
+
+  .second-container {
+    width: auto;
+  }
+}
+
+/* Gallery */
+.grid-wrapper {
+  width: 76%;
+  margin: auto;
+}
+
+.image-grid {
+  padding: 20px;
+}
+
+.image-row {
+  display: flex;
+}
+
+.image-row .image {
+  margin: 12px;
+  height: 240px;
+}
+
+.image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.15), 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+.image-01 {
+  background-image: url("https://www.residentevil.com/re4/assets/images/about_img01.jpg");
+  flex: 1;
+}
+
+.image-02 {
+  background-image: url("https://www.residentevil.com/re4/assets/images/location_img03.jpg");
+  flex: 1;
+}
+
+.image-03 {
+  background-image: url("https://www.residentevil.com/re4/assets/images/location_img06.jpg");
+  flex: 2;
+}
+
+.image-04 {
+  background-image: url("https://r4.wallpaperflare.com/wallpaper/668/38/486/resident-evil-4-resident-evil-4-remake-leon-kennedy-ashley-allen-hd-wallpaper-1970285d617a4d6be667c82fb051963d.jpg");
+  flex: 1;
+}
+
+.image-05 {
+  background-image: url("https://r4.wallpaperflare.com/wallpaper/230/177/121/leon-s-kennedy-resident-evil-resident-evil-4-remake-hd-wallpaper-6b869ccd7371cf3965948b896dacbc10.jpg");
+  flex: 2;
+}
+
+.image-06 {
+  background-image: url("https://www.residentevil.com/re4/assets/images/location_img01.jpg");
+  flex: 2;
+}
+
+.image-07 {
+  background-image: url("https://www.residentevil.com/re4/assets/images/location_img02.jpg");
+  flex: 1;
+}
+
+.image-08 {
+  background-image: url("https://www.residentevil.com/re4/assets/images/character_img-luis-02.jpg");
+  flex: 3;
+}
+
+.image-09 {
+  background-image: url("https://www.residentevil.com/re4/assets/images/character_img-ezalot.jpg");
+  flex: 1;
+}
+
+@media screen and (max-width: 680px) {
+  .image-row {
+    flex-direction: column;
+  }
+
+  .image-row .image {
+    flex-basis: auto;
+  }
+}
+/* End of Gallery */
+
+/* Block Content */
+.block-content {
+  background-color: var(--bg-color);
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 20px 0 40px 0;
+}
+
+.container-1 {
+  margin: auto;
+  width: 73%;
+}
+
+h2.lead {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-align: justify;
+}
+
+/* Cards Block */
+.card-image {
+  background-color: var(--bg-color);
+  height: 300px;
+  margin-bottom: 15px;
+  background-size: cover;
+}
+
+.card-1 {
+  background-image: url(img/leon.jpeg);
+}
+
+.card-2 {
+  background-image: url(img/ada.jpeg);
+}
+
+.card-3 {
+  background-image: url(img/luis.jpeg);
+}
+
+.card-title {
+  font-family: "Resident Evil 4 Remake Font";
+  font-weight: 300;
+  font-size: 3.125rem;
+  letter-spacing: 4px;
+  color: #b6292b;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.card-text {
+  width: 80%;
+  margin: auto;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 680px) {
+  .card-1 {
+    background-image: url(img/leon.jpeg);
+  }
+
+  .card-2 {
+    background-image: url(img/ada.jpeg);
+  }
+
+  .card-3 {
+    background-image: url(img/luis.jpeg);
+  }
+
+  .card-title {
+    color: #b6292b;
+    font-size: 3rem;
+  }
+
+  .card-text {
+    font-size: 1.2rem;
+  }
+}
+
+.second-container {
+  display: flex;
+  justify-content: space-evenly;
+  background-image: linear-gradient(180deg, rgba(31, 30, 30, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%), url(img/2.jpeg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: var(--padding-pg);
+}
+
+.second-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80%;
+}
+
+.container-2 {
+  margin-bottom: 40px;
+  width: 45%;
+}
+
+.container-3 {
+  width: 45%;
+}
+
+@media screen and (max-width: 600px) {
+  .second-container {
+    display: block;
+  }
+
+  .container-2,
+  .container-3 {
+    width: 100%;
+  }
+
+  .second-content {
+    display: block;
+    width: auto;
+  }
+
+  .step-list-wrapper,
+  .step-list-wrapper-1 {
+    width: 85%;
+    margin: auto;
+  }
+
+  .grid-wrapper {
+    width: 85%;
+  }
+}
+
+.step-list-wrapper,
+.step-list-wrapper-1 {
+  font-family: "EB Garamond", serif;
+}
+
+li.step {
+  display: flex;
+  align-items: center;
+}
+
+li.step-1 {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+p.step-index {
+  margin-right: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.step-content {
+  font-size: 1.2rem;
+}
+
+/* CP */
+.contact-person {
+  padding: var(--padding-pg);
+  background-color: var(--bg-color);
+  color: white;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.info-wrapper {
+  width: 65%;
+  padding-right: 17.5px;
+  padding-left: 17.5px;
+}
+
+@media screen and (max-width: 600px) {
+  .contact-person {
+    display: block;
+  }
+
+  .container-4 {
+    width: 95%;
+    margin: 0;
+  }
+
+  .cc-contact-footer-h2,
+  .cc-contact-footer {
+    margin-bottom: 10px;
+  }
+
+  .wrapper {
+    justify-content: inherit;
+    width: 100%;
+  }
+
+  .info-wrapper {
+    width: 100%;
+  }
+
+  .footer-wrapper {
+    display: block;
+    width: 82%;
+  }
+}
+
+.button-wrapper {
+  padding-right: 17.5px;
+  padding-left: 17.5px;
+}
+
+.cc-contact-footer-h2 {
+  font-size: 2.188rem;
+  font-weight: 800;
+}
+
+.cc-contact-footer {
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 1.33;
+}
+
+@media screen and (max-width: 400px) {
+  .contact-person {
+    padding: 20px;
+    display: block;
+  }
+
+  .cc-contact-footer-h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .cc-contact-footer {
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.33;
+    margin-bottom: 10px;
+  }
+
+  .footer-wrapper {
+    display: block !important;
+    width: 82% !important;
+  }
+
+  .wrapper {
+    justify-content: inherit;
+  }
+
+  .footer-title {
+    margin-bottom: 10px;
+  }
+
+  .footer-text {
+    font-size: 18px;
+    font-weight: 300;
+    text-align: left;
+    margin: 0;
+  }
+
+  .rich-text a {
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .footer-text {
+    width: 50%;
+  }
+
+  .cc-footer-link {
+    font-size: 15px;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: var(--bg-color);
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: space-evenly;
+  color: #fff;
+  margin: auto;
+}
+
+.footer-title {
+  margin-bottom: 10px;
+}
+
+.footer-text {
+  font-size: 18px;
+  font-weight: 300;
+  text-align: left;
+  margin: 0;
+}
+
+.cc-footer-link {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.cc-footer-link a:hover {
+  color: #b6292b;
+}
+
+.rich-text a {
+  text-decoration: none;
+}
+
+.footer-text {
+  width: 50%;
+}
+
+.footer-title {
+  font-weight: 600;
+  font-style: normal;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #858585;
+}
+
+.footer-link-wrapper a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer-link-wrapper {
+  width: auto;
+  margin-bottom: 20px;
+}
+.footer-link-wrapper-1 {
+  width: 33.3%;
+  margin-bottom: 20px;
+}
+.footer-link-wrapper-2 {
+  width: 33.3%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.rich-text {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.rich-text a {
+  text-decoration: none;
+}
+
+div a {
+  color: #fff;
+}
+
+.fa-brands {
+  margin-right: 5px;
+  color: #fff;
+}
+
+.footer-copy {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: #858585;
+  margin-top: 15px;
+  margin-top: 10px;
+}
+
+.icon {
+  display: none;
+}
