@@ -245,15 +245,16 @@ p.lead-1 {
   padding: 40px;
 }
 
-.ct-title,
-.title-block {
+.ct-title {
   font-family: "Resident Evil 4 Remake Font";
   text-align: center;
   font-size: 5rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 300;
+  margin: 0;
   margin-bottom: 20px;
+  filter: drop-shadow(5px 0 10px rgba(0, 0, 0, 0.8));
 }
 
 @media screen and (max-width: 600px) {
@@ -261,7 +262,6 @@ p.lead-1 {
     padding: 40px;
   }
 
-  .ct-title,
   .title-block {
     font-size: 4rem;
     letter-spacing: 3px;
@@ -275,9 +275,13 @@ p.lead-1 {
     display: block;
   }
 
+  .ct-desc {
+    font-size: 3rem;
+  }
+
   .desc-text {
-    width: 85% !important;
     margin: auto;
+    columns: 2 !important;
   }
 
   h2.lead {
@@ -400,12 +404,44 @@ img {
   padding: var(--padding-pg);
 }
 
+.container-wrapper {
+  margin: auto;
+  width: 75%;
+}
+
+.title-block {
+  font-family: "Resident Evil 4 Remake Font";
+  text-align: left;
+  font-size: 5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin: 0;
+  color: #b6292b;
+  margin-bottom: 10px;
+  filter: drop-shadow(5px 0 10px rgba(0, 0, 0, 0.8));
+}
+
+.ct-desc {
+  font-family: "EB Garamond", serif;
+  text-align: center;
+  font-size: 4.5rem;
+  margin: 0;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-align: left;
+  line-height: 1;
+  margin-bottom: 30px;
+  filter: drop-shadow(5px 0 10px rgba(0, 0, 0, 0.8));
+}
+
 .desc-text {
-  width: 76%;
   margin: auto;
   font-size: 1.2rem;
   font-weight: 300;
   text-align: left;
+  columns: 3;
 }
 
 @media screen and (max-width: 400px) {
@@ -457,11 +493,8 @@ img {
 
   .title-block,
   .ct-title {
-    font-family: "Resident Evil 4 Remake Font";
-    text-align: center;
     font-size: 3.125rem;
     letter-spacing: 2px;
-    text-transform: uppercase;
     font-weight: 300;
     margin-bottom: 20px;
   }
@@ -473,11 +506,19 @@ img {
     display: block;
   }
 
+  .container-wrapper {
+    width: 85% !important;
+  }
+
+  .ct-desc {
+    font-size: 3rem;
+  }
+
   .desc-text {
-    width: auto;
     font-size: 1rem;
     font-weight: 300;
     text-align: left;
+    columns: 2;
   }
 
   .card-text {
@@ -493,9 +534,9 @@ img {
     width: 70% !important;
   }
 
-  .step-list-wrapper,
-  .step-list-wrapper-1 {
-    width: 100% !important;
+  ol.step-list {
+    margin: 0;
+    padding: 0;
   }
 
   .step-content {
@@ -510,8 +551,12 @@ img {
     font-size: 12px !important;
   }
 
-  .second-container {
-    width: auto;
+  .second-content {
+    width: 100% !important;
+  }
+
+  .container-2 {
+    width: 87% !important;
   }
 }
 
@@ -607,7 +652,7 @@ img {
 
 .container-1 {
   margin: auto;
-  width: 73%;
+  width: 71%;
 }
 
 h2.lead {
@@ -698,31 +743,13 @@ h2.lead {
 
 .container-2 {
   margin-bottom: 40px;
-  width: 45%;
-}
-
-.container-3 {
-  width: 45%;
+  width: 94%;
 }
 
 @media screen and (max-width: 600px) {
-  .second-container {
-    display: block;
-  }
-
-  .container-2,
-  .container-3 {
-    width: 100%;
-  }
-
-  .second-content {
-    display: block;
-    width: auto;
-  }
-
   .step-list-wrapper,
   .step-list-wrapper-1 {
-    width: 85%;
+    width: 100%%;
     margin: auto;
   }
 
@@ -731,14 +758,14 @@ h2.lead {
   }
 }
 
-.step-list-wrapper,
-.step-list-wrapper-1 {
-  font-family: "EB Garamond", serif;
+ol.step-list {
+  margin: 0;
+  padding: 0;
 }
 
 li.step {
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 li.step-1 {
@@ -750,10 +777,12 @@ p.step-index {
   margin-right: 20px;
   font-size: 18px;
   font-weight: 600;
+  color: #b6292b;
 }
 
 .step-content {
   font-size: 1.2rem;
+  font-weight: 400;
 }
 
 /* CP */
