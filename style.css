@@ -289,6 +289,18 @@ p.lead-1 {
     font-weight: 300;
     text-align: justify;
   }
+
+  .container-wrapper {
+    width: 86% !important;
+  }
+
+  .container-1 {
+    width: 72% !important;
+  }
+
+  .second-content {
+    width: 90% !important;
+  }
 }
 
 /* Carousel */
