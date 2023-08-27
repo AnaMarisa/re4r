@@ -251,10 +251,12 @@
       let startX = 0;
       let touchDelta = 0;
 
-      const slides = document.getElementsByClassName("mySlides")[0];
-      slides.addEventListener("touchstart", touchStart);
-      slides.addEventListener("touchmove", touchMove);
-      slides.addEventListener("touchend", touchEnd);
+      const slides = document.getElementsByClassName("mySlides");
+      for (const slide of slides) {
+          slide.addEventListener("touchstart", touchStart);
+          slide.addEventListener("touchmove", touchMove);
+          slide.addEventListener("touchend", touchEnd);
+      }
 
       showSlides(slideIndex);
 
